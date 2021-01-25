@@ -4,29 +4,29 @@ DBGVIEW=*SOURCE
 
 SHELL=/QOpenSys/usr/bin/qsh
 
-BIN_LIB=PROFSRVDEV
+BIN_LIB=TESTLIB
 
 DTA_LIB=$(BIN_LIB)
 
 SRC_LIB=$(BIN_LIB)
 
-MBR_PGM=QRPGLESRC
+MBR_PGM=SOURCE
 
-MBR_DDS=QDDSSRC
+MBR_DDS=SOURCE
 
-LIBLIST=$(BIN_LIB) ASODTAPDEV AAPDTANEWT APODTANEWT AARDTANEWT CASPGM AWODTANEWT DSTPGMSMY APOPGMSMY AARPGMSMY AWOPGMSMY PUIDEV PJSDEV
+LIBLIST=$(BIN_LIB) QTEMP
 
-all: rpdlssps.pgm bidyspsls.pgm bil12spsls.pgm rpl12spsls.pgm biwkspsls.pgm rpwkspsls.pgm
+all: sysvarr.sqlrpgle
 
 # Daily sales person sales
 
-bidyspsls.pgm: bidyspsls.sqlrpglemod dlsspsrcd.sqlrpglemod
+# bidyspsls.pgm: bidyspsls.sqlrpglemod dlsspsrcd.sqlrpglemod
 
-bidyspsls.sqlrpglemod: bidyspslsd.dspf
+# bidyspsls.sqlrpglemod: bidyspslsd.dspf
 
-rpdlssps.pgm: rpdlssps.sqlrpglemod dlsspsrcd.sqlrpglemod
+# rpdlssps.pgm: rpdlssps.sqlrpglemod dlsspsrcd.sqlrpglemod
 
-rpdlssps.sqlrpglemod: rpdlsspsp.prtf asoscmv1
+# rpdlssps.sqlrpglemod: rpdlsspsp.prtf asoscmv1
 
 asoscmv1:
 
@@ -36,7 +36,7 @@ system "CPYFRMSTMF FROMSTMF('./buildSrc/asoscmv1.sql') TOMBR('/QSYS.lib/$(SRC_LI
 
 %.rpgle:
 
-liblist -d PROFSRVDEV; \
+liblist -d TESTLIB; \
 
 liblist -al $(LIBLIST);\
 
@@ -101,9 +101,9 @@ system "CPYFRMSTMF FROMSTMF('./src/qrpglesrc/$*.sqlrpglemod') TOMBR('/QSYS.lib/$
 
 %.sqlrpgle:
 
-liblist -d PROFSRVDEV;\
+liblist -d TESTLIB;\
 
-liblist -d PUIDEV;\
+# liblist -d PUIDEV;\
  liblist -al $(LIBLIST);\
 
 system "CRTSQLRPGI OBJ($(BIN_LIB)/$*) SRCSTMF('./src/qrpglesrc/$*.sqlrpgle') OBJTYPE(*PGM) REPLACE(*YES)"
