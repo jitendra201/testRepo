@@ -24,10 +24,10 @@ all: sysvarr.sqlrpgle
  
 %.sqlrpgle:
  
-        system "CRTSQLRPGI OBJ($(BIN_LIB)/$*) SRCSTMF('./$*.sqlrpgle') OBJTYPE(*PGM) REPLACE(*YES)"
+ system "CRTSQLRPGI OBJ($(BIN_LIB)/$*) SRCSTMF('./$*.sqlrpgle') OBJTYPE(*PGM) REPLACE(*YES)"
  
-# system "CPYFRMSTMF FROMSTMF('./$*.sqlrpgle') TOMBR('/QSYS.lib/$(SRC_LIB).lib/$(MBR_PGM).file/$*.mbr') MBROPT(*replace)"
- 
+ system "CPYFRMSTMF FROMSTMF('./$*.sqlrpgle') TOMBR('/QSYS.lib/$(SRC_LIB).lib/$(MBR_PGM).file/$*.mbr') MBROPT(*replace)"
+  
 
  
 all:
