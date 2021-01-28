@@ -32,4 +32,4 @@ all: sysvarr.sqlrpgle
  
 all:
  
-@echo "Build finished!" 
+	@echo "Build finished!" 
