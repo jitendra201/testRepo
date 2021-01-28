@@ -27,9 +27,3 @@ all: sysvarr.sqlrpgle
 	system "CRTSQLRPGI OBJ($(BIN_LIB)/$*) SRCSTMF('./$*.sqlrpgle') OBJTYPE(*PGM) REPLACE(*YES)"
  
 	system "CPYFRMSTMF FROMSTMF('./$*.sqlrpgle') TOMBR('/QSYS.lib/$(SRC_LIB).lib/$(MBR_PGM).file/$*.mbr') MBROPT(*replace)"
- 	
-	
- 
-all:
- 
-	# @echo "Build finished!" 
