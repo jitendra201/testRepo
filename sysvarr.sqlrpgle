@@ -4,19 +4,19 @@
        dcl-s tsvar  timestamp inz;                                                                  
        dcl-s datevar date inz;                                                                      
        dcl-s timevar time inz;                                                                      
-       dcl-s numvar   zoned(30) inz;                                                                
+       // dcl-s numvar   zoned(30) inz;                                                                
                                                                                                     
                                                                                                     
-       //‚Compiler directive..                                                                      
+       //â€šCompiler directive..                                                                      
        exec sql set option commit = *none                                                           
                          ,datfmt = *iso;                                                            
-       //‚Main line..                                                                               
+       //â€šMain line..                                                                               
                                                                                                     
-         //‚using set to assign system values...                                                    
+         //â€šusing set to assign system values...                                                    
        exec sql set :charvar = session_user;                                                        
        dsply ('session user is ' + %trim(charvar));                                                 
                                                                                                     
-         //‚Or, using values...                                                                     
+         //â€šOr, using values...                                                                     
        exec sql values now() into :tsvar;                                                           
        dsply ('timestamp is ' + %char(tsvar));                                                      
                                                                                                     
