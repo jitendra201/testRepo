@@ -1,0 +1,7 @@
+
+             PGM
+
+             DCL        VAR(&SOURCE) TYPE(*CHAR) LEN(10)
+ /*‚MT386     DCL        VAR(&CMD) TYPE(*CHAR) LEN(1000) */
+ /*MT386*/   DCL        VAR(&CYYMMDD) TYPE(*CHAR) LEN(7)
+             ENDPGM
