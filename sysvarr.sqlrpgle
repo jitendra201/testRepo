@@ -4,7 +4,7 @@
        dcl-s tsvar  timestamp inz;                                                                  
        dcl-s datevar date inz;                                                                      
        dcl-s timevar time inz;                                                                      
-       // dcl-s numvar   zoned(30) inz;                                                                
+       dcl-s numvar   zoned(30) inz;                                                                
                                                                                                     
                                                                                                     
        //‚Compiler directive..                                                                      
